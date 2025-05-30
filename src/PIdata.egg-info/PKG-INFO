@@ -1,21 +1,44 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: PIdata
-Version: 0.3.1
-Summary: An easy-to-use connector for the OSI PI historian
-Author-email: Venanzio Petrarolo <petrarolov@gmail.com>
+Version: 0.4.0
+Summary: An easy-to-use connector for the OSI PI historian with bulk retrieval support
+Author-email: Venanzio Petrarolo <petrarolov@gmail.com>, Trey Belleu <william.belleu@shell.com>
 Project-URL: Homepage, https://github.com/Petrarolo/PIdata
 Project-URL: Issues, https://github.com/Petrarolo/PIdata/issues
-Keywords: OSI,PI,Connector,Historian,Process,Control,Automation,Engineering
-Classifier: Development Status :: 3 - Alpha
+Project-URL: Documentation, https://github.com/Petrarolo/PIdata#readme
+Keywords: OSI,PI,Connector,Historian,Process,Control,Automation,Engineering,Bulk,Performance
+Classifier: Development Status :: 4 - Beta
 Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
 Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: pythonnet
-Requires-Dist: numpy
-Requires-Dist: pandas
+Requires-Dist: pythonnet>=3.0.3
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: pyarrow>=15.0.0
+Requires-Dist: tqdm>=4.66.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.1.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Provides-Extra: benchmark
+Requires-Dist: fastparquet>=2024.2.0; extra == "benchmark"
+Requires-Dist: matplotlib>=3.7.0; extra == "benchmark"
+Requires-Dist: seaborn>=0.12.0; extra == "benchmark"
+Dynamic: license-file
 
 # PIdata
 An easy to use python package for extracting data from an OSI PI historian/server via the OSI PI SDK. Based on this blog post: https://pisquare.osisoft.com/people/rborges/blog/2016/08/01/pi-and-python-pithon
