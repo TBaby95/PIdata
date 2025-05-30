@@ -22,10 +22,20 @@ import numpy as np
 from dateutil.relativedelta import relativedelta, MO
 from dateutil import parser
 
+from functools import lru_cache
+
+@lru_cache(maxsize=10000)
+def cached_strip_timestamp(timestamp_str):
+    """Cached version of timestamp parsing"""
+    return datetime.datetime.strptime(
+        timestamp_str, 
+        '%m/%d/%Y %H:%M:%S'
+    )
 
 def strip_timestamp(timestamp):
-    """Converts PI timestamp format to python datetime format"""
-    return datetime.datetime.strptime(timestamp.ToString(AFLocaleIndependentFormatProvider()), '%m/%d/%Y %H:%M:%S')
+    """Optimized timestamp conversion with caching"""
+    ts_str = timestamp.ToString(AFLocaleIndependentFormatProvider())
+    return cached_strip_timestamp(ts_str)
 
 
 def validate_tags(tags,return_found=True, server='default'):
