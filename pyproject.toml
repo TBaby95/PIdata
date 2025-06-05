@@ -7,7 +7,7 @@ name = "PIdata"
 version = "0.4.0"
 authors = [
   { name="Venanzio Petrarolo", email="petrarolov@gmail.com" },
-  { name="Trey Belleu", email="william.belleu@shell.com" }
+  { name="Trey Belleu", email="wbelleu3@gmail.com" }
 ]
 description = "An easy-to-use connector for the OSI PI historian with bulk retrieval support"
 readme = "README.md"
